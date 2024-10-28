@@ -20,7 +20,7 @@ export default function Home() {
             </code>
             .
           </li>
-          <li>Already changed v3</li>
+          <li>Already changed v0.5.0</li>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
