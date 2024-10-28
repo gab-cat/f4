@@ -32,5 +32,5 @@ jobs:
         push: true
         tags: |
           gabcat/next-try:latest
-          gabcat/next-try:${{ env.commit_tag }}  # Tag with the first word of the commit
+          gabcat/next-try:${{ env.commit_tag }}  
         file: ./Dockerfile
