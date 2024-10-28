@@ -1,6 +1,19 @@
 import Image from "next/image";
+import logger from "../lib/logger";
+import { headers } from "next/headers";
 
-export default function Home() {
+export default async function Home() {
+
+    // Access headers to get request information
+    const headersList = headers();
+    const pathname = "/"; // Since this is the home page
+    const method = "GET"; // Typically will be a GET request for page loads
+    const ip = (await headersList).get("x-forwarded-for") || "unknown IP";
+    const userAgent = (await headersList).get("user-agent") || "unknown";
+  
+    // Log the request details
+    logger.info(`Visited ${pathname} with ${method} by IP: ${ip}, User Agent: ${userAgent}`);
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -99,3 +112,4 @@ export default function Home() {
     </div>
   );
 }
+
