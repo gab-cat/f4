@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Get the first word of the commit message
+    - name: Get version tag
       id: get_commit_tag
       run: |
         # Extract the first word of the commit message
