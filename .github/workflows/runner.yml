@@ -31,6 +31,6 @@ jobs:
       with:
         push: true
         tags: |
+          gabcat/next-try:${{ env.commit_tag }} 
           gabcat/next-try:latest
-          gabcat/next-try:${{ env.commit_tag }}  
         file: ./Dockerfile
